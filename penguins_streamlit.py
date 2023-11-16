@@ -114,7 +114,13 @@ st.write(
     """Below are the histograms for each
 continuous variable separated by penguin species.
 The vertical line represents the inputted value."""
-)
+) 
+
+
+fig, ax = plt.subplots()
+ax = sns.countplot(x=penguin_df["species"])
+plt.title("Species Count plot")
+st.pyplot(ax)
 
 fig, ax = plt.subplots()
 ax = sns.displot(x=penguin_df["bill_length_mm"], hue=penguin_df["species"])
